@@ -1,0 +1,14 @@
+.metadataItem {
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+
+  background-color: var(--violet);
+  border-radius: 16px;
+}
+
+.metadataItem > p {
+  margin: 0;
+  color: var(--white);
+  font-weight: 500;
+}

@@ -1,0 +1,11 @@
+.filtersPanel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 36px;
+}
+
+.filtersPanel > div {
+  width: 25%;
+}

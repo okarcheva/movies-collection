@@ -1,0 +1,36 @@
+.movieDetails {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 0;
+}
+
+.movieDetails > header {
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 600;
+  color: var(--violet);
+}
+
+.movieDetailsBlock {
+  overflow: auto;
+  padding-inline-end: 8px;
+}
+
+.imageContainer > img {
+  float: left;
+  margin-inline-end: 16px;
+  border-radius: 16px;
+}
+
+.movieOverview {
+  margin: 0;
+  text-align: justify;
+}
+
+.ratingContainer {
+  position: absolute;
+  inset-inline-end: -48px;
+  inset-block-end: -48px;
+}
