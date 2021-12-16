@@ -54,7 +54,7 @@
 }
 
 @media only screen
-and (max-device-width: 500px) {
+and (max-device-width: 400px) {
   .modal {
     height: 100%;
     width: 100%;

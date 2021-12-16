@@ -12,7 +12,7 @@
 }
 
 @media only screen
-and (max-device-width: 373px) {
+and (max-device-width: 400px) {
   .filter > select {
     height: 36px;
   }
