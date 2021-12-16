@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Filter from "../../Filter/Filter";
+import Filter from "../../shared/Filter/Filter";
 import { buildRatingList } from "../../../services/mappingService";
 
 const RatingFilter = ({ rating, onChange }) => {

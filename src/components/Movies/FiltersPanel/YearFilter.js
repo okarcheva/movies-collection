@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Filter from "../../Filter/Filter";
+import Filter from "../../shared/Filter/Filter";
 import { buildYearsOfProduction } from "../../../services/mappingService";
 
 const YearFilter = ({ year, onChange }) => {

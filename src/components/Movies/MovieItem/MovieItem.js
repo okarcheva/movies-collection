@@ -1,6 +1,6 @@
 import { useRef, useEffect, useCallback, useState } from 'react';
 import styles from './MovieItem.module.css';
-import ThreeDotsLoader from '../../ThreeDotsLoader/ThreeDotsLoader';
+import ThreeDotsLoader from '../../shared/ThreeDotsLoader/ThreeDotsLoader';
 
 const MovieItem = ({ movie, onClick }) => {
   const [isImageLoading, setIsImageLoading] = useState(true);

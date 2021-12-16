@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 import { isInViewport } from '../../../services/domService';
 import MovieItem from '../MovieItem/MovieItem';
-import ThreeDotsLoader from '../../ThreeDotsLoader/ThreeDotsLoader';
+import ThreeDotsLoader from '../../shared/ThreeDotsLoader/ThreeDotsLoader';
 import styles from './MoviesContainer.module.css';
 
 const MoviesContainer = ({ allMoviesLoaded, movies, isLoading, onMovieClick, onIntersectionHit }) => {

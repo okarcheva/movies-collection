@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import Filter from '../../Filter/Filter';
+import Filter from '../../shared/Filter/Filter';
 import { MovieApiConfig } from '../../../config';
 import { mapGenres } from '../../../services/mappingService';
 import styles from './FiltersPanel.module.css';
-import ThreeDotsLoader from '../../ThreeDotsLoader/ThreeDotsLoader';
+import ThreeDotsLoader from './../../shared/ThreeDotsLoader/ThreeDotsLoader';
 
 const GenreFilter = ({ genre, onChange }) => {
   const [genres, setGenres] = useState([]);

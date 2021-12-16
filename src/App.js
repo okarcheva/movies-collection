@@ -1,7 +1,7 @@
 import styles from './App.module.css';
 import FiltersPanel from './components/Movies/FiltersPanel/FiltersPanel';
 import MoviesContainer from './components/Movies/MoviesContainer/MoviesContainer';
-import Modal from './components/Modal/Modal';
+import Modal from './components/shared/Modal/Modal';
 import MovieDetails from './components/MovieDetails/MovieDetails';
 import { useState, useEffect, useMemo, useCallback } from 'react';
 import { MovieApiConfig } from './config';

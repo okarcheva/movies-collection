@@ -1,4 +1,4 @@
-import MetaDataItem from '../../MetaDataItem/MetaDataItem';
+import MetaDataItem from '../../shared/MetaDataItem/MetaDataItem';
 import styles from './MovieMetaData.module.css';
 
 const MovieMetaData = ({ movie }) => {
