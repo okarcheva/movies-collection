@@ -4,6 +4,7 @@
   flex-direction: column;
   gap: 16px;
   min-height: 0;
+  height: 100%;
 }
 
 .movieDetails > header {
@@ -33,4 +34,22 @@
   position: absolute;
   inset-inline-end: -48px;
   inset-block-end: -48px;
+}
+
+@media only screen
+and (max-device-width: 376px) {
+  .movieDetails {
+    gap: 24px;
+  }
+
+  .movieDetailsBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .ratingContainer {
+    position: static;
+  }
 }

@@ -21,11 +21,6 @@
 
   background-color: var(--white);
   border-radius: 16px;
-
-  /* @media (max-width: 500px) {
-    left: 0px;
-    margin: 0px 10px;
-  } */
 }
 
 .closeIcon {
@@ -43,17 +38,37 @@
 
 .closeIcon::before,
 .closeIcon::after {
-    position: absolute;
-    content: '';
-    width: 100%;
-    height: 4px; /* cross thickness */
-    background-color: var(--white);
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 4px; /* cross thickness */
+  background-color: var(--white);
 }
 
 .closeIcon::before {
-    transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .closeIcon::after {
-    transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+@media only screen
+and (max-device-width: 376px) {
+  .modal {
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+  .closeIcon {
+    inset-inline-end: 12px;
+    inset-block-start: 12px;
+  }
+
+  .closeIcon::before, .closeIcon::after {
+    background-color: var(--gray);
+  }
 }

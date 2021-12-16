@@ -3,9 +3,21 @@
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 16px;
-  padding: 36px;
+  padding: 24px;
 }
 
 .filtersPanel > div {
   width: 25%;
+}
+
+@media only screen
+and (max-device-width: 376px) {
+  .filtersPanel {
+    flex-direction: column;
+    padding: 12px;
+  }
+
+  .filtersPanel > div {
+    width: 100%;
+  }
 }

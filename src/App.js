@@ -3,7 +3,7 @@ import FiltersPanel from './components/Movies/FiltersPanel/FiltersPanel';
 import MoviesContainer from './components/Movies/MoviesContainer/MoviesContainer';
 import Modal from './components/Modal/Modal';
 import MovieDetails from './components/MovieDetails/MovieDetails';
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import { MovieApiConfig } from './config';
 import { mapMovies } from './services/mappingService';
 import { filterMovies } from './services/helper';
@@ -93,13 +93,13 @@ function App() {
     sessionStorage.setItem(SessionStorageKeys.currentRating, JSON.stringify(rating));
   }
 
-  const loadMoreMovies = () => {
+  const loadMoreMovies = useCallback(() => {
     if (allLoaded) {
       return;
     }
 
     setPage((page) => ++page);
-  }
+  }, [allLoaded]);
 
   return (
     <div className="App">

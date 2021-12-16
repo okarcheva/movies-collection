@@ -1,7 +1,17 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useCallback } from 'react';
 import styles from './MovieItem.module.css';
 
 const MovieItem = ({ movie, onClick }) => {
+  const posterImage = useRef(null);
+  const handleObserver = useCallback((entities, self) => {
+    const entity = entities[0];
+    if (entity.isIntersecting) {
+      const src = posterImage.current.getAttribute('data-src');
+      posterImage.current.setAttribute('src', src);
+      self.unobserve(entity.target);
+    }
+  }, [posterImage]);
+
   useEffect(() => {
     var options = {
       root: null,
@@ -13,18 +23,7 @@ const MovieItem = ({ movie, onClick }) => {
       observer.observe(posterImage.current)
     }
 
-  }, []);
-
-  const posterImage = useRef(null);
-
-  const handleObserver = (entities, self) => {
-    const target = entities[0];
-    if (target.isIntersecting) {
-      const src = posterImage.current.getAttribute('data-src');
-      posterImage.current.setAttribute('src', src);
-      self.unobserve(target);
-    }
-  }
+  }, [handleObserver]);
 
   const handleClick = () => {
     onClick();

@@ -10,3 +10,10 @@
   font-weight: 500;
   cursor: pointer;
 }
+
+@media only screen
+and (max-device-width: 376px) {
+  .filter > select {
+    height: 36px;
+  }
+}
