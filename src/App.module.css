@@ -1,0 +1,11 @@
+.App {
+  height: 100%;
+  text-align: center;
+}
+
+.error {
+  position: absolute;
+  inset-inline-start: 50%;
+  inset-block-start: 50%;
+  transform: translate(-50%, -50%);
+}

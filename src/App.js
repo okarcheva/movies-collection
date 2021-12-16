@@ -1,4 +1,4 @@
-import './App.css';
+import styles from './App.module.css';
 import FiltersPanel from './components/Movies/FiltersPanel/FiltersPanel';
 import MoviesContainer from './components/Movies/MoviesContainer/MoviesContainer';
 import Modal from './components/Modal/Modal';
@@ -49,7 +49,7 @@ function App() {
           setIsLoading(false);
         },
         (error) => {
-          setError(error);
+          setError(`Server request returned an error.`);
           setIsLoading(false);
         }
       );
@@ -102,7 +102,7 @@ function App() {
   }, [allLoaded]);
 
   return (
-    <div className="App">
+    <div className={styles.App}>
       <FiltersPanel
         genre={currentGenre}
         year={currentYear}
@@ -111,16 +111,21 @@ function App() {
         onYearChange={handleYearChange}
         onRatingChange={handleRatingChange}
       />
-      {movies && movies.length > 0 && <MoviesContainer
-        allMoviesLoaded={allLoaded}
-        movies={filteredMovies}
-        isLoading={isLoading}
-        onMovieClick={handleMovieClick}
-        onIntersectionHit={loadMoreMovies}
-      />}
-      {isOpen && <Modal setOpen={setIsOpen}>
-        <MovieDetails movie={currentMovie} />
-      </Modal>}
+      {!error &&
+        <>
+          {movies && movies.length > 0 && <MoviesContainer
+            allMoviesLoaded={allLoaded}
+            movies={filteredMovies}
+            isLoading={isLoading}
+            onMovieClick={handleMovieClick}
+            onIntersectionHit={loadMoreMovies}
+          />}
+          {isOpen && <Modal setOpen={setIsOpen}>
+            <MovieDetails movie={currentMovie} />
+          </Modal>}
+        </>
+      }
+      {error && <div className={styles.error}>{error}</div>}
     </div>
   );
 }

@@ -22,7 +22,7 @@
   border-radius: 5px;
   background-color: var(--veryperi);
   color: var(--veryperi);
-  animation: dotCollisionBefore 2s infinite ease-in;
+  animation: dotCollisionBefore 2s infinite ease-in; 
 }
 
 .dotCollision::after {

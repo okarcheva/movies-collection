@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import Filter from '../../Filter/Filter';
 import { MovieApiConfig } from '../../../config';
 import { mapGenres } from '../../../services/mappingService';
+import styles from './FiltersPanel.module.css';
+import ThreeDotsLoader from '../../ThreeDotsLoader/ThreeDotsLoader';
 
 const GenreFilter = ({ genre, onChange }) => {
   const [genres, setGenres] = useState([]);
@@ -31,13 +33,13 @@ const GenreFilter = ({ genre, onChange }) => {
       );
   }, []);
 
-  if (genres && genres.length > 0) {
-    return (
-      <Filter label="Genre" selectedValue={genre} options={genres} onChange={onChange} />
-    )
-  };
-
-  return null;
+  return (
+    <>
+      {genres && genres.length > 0 && <Filter label="Genre" selectedValue={genre} options={genres} onChange={onChange} />}
+      {isLoading && <ThreeDotsLoader />}
+      {error && <div className={styles.error}>{error}</div>}
+    </>
+  );
 };
 
 export default GenreFilter;

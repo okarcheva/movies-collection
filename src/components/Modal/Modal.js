@@ -1,8 +1,13 @@
 import ReactDOM from 'react-dom';
+import { useEffect } from 'react';
 import styles from './Modal.module.css';
 
-
 const Modal = ({ children, setOpen }) => {
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => document.body.style.overflow = 'unset';
+  }, []);
+
   const close = () => {
     setOpen(false);
   }

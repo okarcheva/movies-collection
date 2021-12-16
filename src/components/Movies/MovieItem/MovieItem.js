@@ -1,7 +1,9 @@
-import { useRef, useEffect, useCallback } from 'react';
+import { useRef, useEffect, useCallback, useState } from 'react';
 import styles from './MovieItem.module.css';
+import ThreeDotsLoader from '../../ThreeDotsLoader/ThreeDotsLoader';
 
 const MovieItem = ({ movie, onClick }) => {
+  const [isImageLoading, setIsImageLoading] = useState(true);
   const posterImage = useRef(null);
   const handleObserver = useCallback((entities, self) => {
     const entity = entities[0];
@@ -35,7 +37,9 @@ const MovieItem = ({ movie, onClick }) => {
         <img ref={posterImage}
           data-src={movie.posterUrl}
           alt={movie.description}
+          onLoad={() => setIsImageLoading(false)}
         />
+        {isImageLoading && <ThreeDotsLoader />}
         <div className={styles.movieRating}>{movie.rating}</div>
         <div className={styles.movieYear}>{movie.releaseDate.getFullYear()}</div>
       </div>
