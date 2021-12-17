@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+# Movies Collection App
+You can find deployed application [here](https://61bc5752344ce40008c1d25e--fervent-archimedes-551a2d.netlify.app/).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Implemented features
+- SPA for showing and filtering movies collection
+- Available filters: Genre, Release Year and Rating
+- Hover on movie from collection shows additional information
+- Click on movie from collection opens a modal window with movie details
+- Integrated with open-source back-end API for retrieving movies [The Movie Database API](https://developers.themoviedb.org/3/getting-started/introduction)
+  - Used [/movie/top_rated](https://developers.themoviedb.org/3/movies/get-top-rated-movies) endpoint for retrieving movies (this endpoint supports paging)
+  - Used [/genre/movie/list](https://developers.themoviedb.org/3/genres/get-movie-list) endpoint for retrieving the list of movie genres
+- Movies are loaded by pages, new loads are triggered by scrolling up to page bottom (infinite scroll feature)
+- Images loaded with movies support lazy loading
+- All filters survive page reload
+- Application is adaptive (supports mobile and tablet modes). Deployed application was checked on iPhone 12 Pro.
+- Application was checked on Chrome (v96), Safari (v15.1) and Firefox (v95.0)
 
-## Available Scripts
+## Known issues (limitations)
+- Chosen API doesn't support passing search parameters in it that's why filtering (search) is happening on UI. This sometimes cause strange UI behavior. Infinite scroll is constantly triggered up to reaching the final page because server returns movies that don't satisfy the chosen filters.
+- Sometimes infinite scroll is not triggered. Need to scroll a bit up and then down
+- No tests
 
-In the project directory, you can run:
+## To launch app locally
+Prerequisites:\
+`Node >= 14.0.0 and npm >= 5.6` should be installed on your machine
 
-### `npm start`
+Run the following commands:\
+`npm install`\
+`npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
