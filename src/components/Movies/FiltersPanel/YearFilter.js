@@ -10,7 +10,7 @@ const YearFilter = ({ year, onChange }) => {
 
   if (years && years.length > 0) {
     return (
-      <Filter selectedValue={year} label="Release Date" options={years} onChange={onChange} />
+      <Filter selectedValue={year} label="Release Year" options={years} onChange={onChange} />
     );
   }
 
